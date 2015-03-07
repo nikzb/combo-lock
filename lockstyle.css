@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    padding: 5px;
+    color: green;
+    font-family:  Tahoma, sans-serif;
+    font-size: 100%;
+    text-align: center;
+    margin-right: auto;
+    margin-left:auto;
+    background-color: gray;
+}
+
+#main {
+    margin: 2px;
+    padding: 1px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    max-width: 420px;
+}
+
+input {
+  font-size: 1.7em; 
+	text-align: center;
+	width: 50px;
+	margin-bottom: 1px;
+}
+
+.button {
+	margin: 4px;
+	padding: 3px;
+	font-size: 1.3em;
+}
+
+#unlock {
+	width: 100px;
+}
+
+#stepByStep {
+	width: 170px;
+}
+
+input.sliders {
+	width: 180px;
+}
+
+h1 {
+    font-size: 1.5em;
+	background-color: #c0c0c0;
+	border-radius: 10px;
+	padding: 5px;
+	margin: 5px;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+/*
+p {
+    font-size: 1em;
+	margin: 4px;
+    padding: 2px;
+}
+*/
+
+.instruction {
+	font-size: 1em;
+    margin: 1px;
+	padding: 2px;
+}
+
+#copyright {
+	font-size: 0.7em;
+}
+
+#myCanvas {
+	margin-top: 5px;
+	width: 250px;
+}
+
+.combo-numbers.invalid {
+    -webkit-animation: shake .5s linear;
+	-moz-animation: shake .5s linear;
+	animation: shake .5s linear;
+}
+
+ @-webkit-keyframes shake {
+    8%, 41% {
+        -webkit-transform: translateX(-8px);
+    }
+    25%, 58% {
+        -webkit-transform: translateX(8px);
+    }
+    75% {
+        -webkit-transform: translateX(-4px);
+    }
+    92% {
+        -webkit-transform: translateX(4px);
+    }
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+}
+
+ @keyframes shake {
+   8%, 41% {
+        transform: translateX(-8px);
+    }
+    25%, 58% {
+        transform: translateX(8px);
+    }
+    75% {
+        transform: translateX(-4px);
+    }
+    92% {
+        transform: translateX(4px);
+    }
+    0%, 100% {
+        transform: translateX(0);
+    }
+}
+
+ @-moz-keyframes shake {
+    8%, 41% {
+        -moz-transform: translateX(-8px);
+    }
+    25%, 58% {
+        -moz-transform: translateX(8px);
+    }
+    75% {
+        -moz-transform: translateX(-4px);
+    }
+    92% {
+        -moz-transform: translateX(4px);
+    }
+    0%, 100% {
+        -moz-transform: translateX(0);
+    }
+}
+
+/* height is at least 560px */
+@media only screen and (min-height: 560px){  
+	#myCanvas {
+		margin-top: 10px;
+		width: 280px;
+	}
+}
+
+/* width is at least 450px */
+@media only screen and (min-width: 450px){  
+	body {
+		padding: 10px;
+
+	}
+
+	#main {
+		margin: 10px;
+		margin-right: auto;
+		margin-left:auto;				
+	}
+
+	h1 {
+		font-size: 2.3em;
+		border-radius: 10px;
+		padding: 5px;
+		margin: 10px;
+	}
+	
+	p {
+		font-size: 1em;
+		padding: 5px;
+	}
+
+	.instruction {
+		font-size: 1.15em;
+	}
+	
+	#myCanvas {
+		margin-top: 10px;
+		width: 280px;
+	}
+	
+	input.combo-numbers{ 
+		font-size: 1.8em; 
+		width: 70px;
+		margin-bottom: 2px;
+	}
+
+	div.sliders {
+		display:inline;
+		
+	}
+	
+	div#sliders {
+		margin-top: 5px;
+		
+	}
+	
+	label.sliders {
+		vertical-align:middle;
+	}
+	
+	input.sliders {
+		width: 100px;
+		vertical-align:middle;
+	}
+	
+	#dialSliderLabel{
+		margin-left: 20px;
+		
+	}
+}  
+
+
+
+
+
