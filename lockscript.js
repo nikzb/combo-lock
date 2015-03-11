@@ -7,6 +7,11 @@ var numTicks = 40; //the number of tick  marks on the dial
 var turnSpeed = 3.0; //the current turn speed
 const mediumTurnSpeed = 3.0; //use to scale the speed correctly
 
+//these will be changed to true as the placeholders are replaced
+var number1Replaced = false;
+var number2Replaced = false;
+var number3Replaced = false;
+
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
 
@@ -197,8 +202,6 @@ function rotateImage(canvas, context) {
 	var x = percentOfAngleTurned * Math.PI;
 	var angleToTurnNow = (turnSpeed / mediumTurnSpeed) * (Math.sin(x + Math.PI / 12) + 0.5) * imageRots[0].totalAngle / 90;
 	
-	//console.log(angleToTurnNow + " " + percentOfAngleTurned + " " + imageRots[0].totalAngle);
-	
 	if (angleLeftToTurn > 0) //if still turning
 	{
 		// must turn the standard amount or the remaining amount if less than the standard amount
@@ -330,11 +333,9 @@ function openLock(number1, number2, number3, canvas, context) {
 	
 	//add turn to imageRots array to reach third number
 	if (number2 > number3) {
-		console.log("A " + number2 + " " + number3 + " " + dialNumbersToRadians(number2 - number3));
 		imageRots.push(new ImageRotation(0, dialNumbersToRadians(number2 - number3), 3));
 	}
 	else {
-		console.log("B " + number2 + " " + number3 + " " + numTicks + " " + dialNumbersToRadians(number2 + numTicks - number3));
 		imageRots.push(new ImageRotation(0, dialNumbersToRadians(number2 + numTicks - number3), 3));	
 	}
 	
@@ -608,6 +609,20 @@ $(document).ready(function() {
 		$(this).select();
 	});	
 	*/
+	$("#number1").click(function() {
+		number1Replaced = true;
+		$("#number1").attr("placeholder", "");
+	});
+	
+	$("#number2").click(function() {
+		number2Replaced = true;
+		$("#number2").attr("placeholder", "");
+	});
+	
+	$("#number3").click(function() {
+		number3Replaced = true;
+		$("#number3").attr("placeholder", "");
+	});
 		
 	$("#unlock").click(function() {
 		$( "#number1" ).removeClass("invalid");
@@ -615,6 +630,20 @@ $(document).ready(function() {
 		$( "#number3" ).removeClass("invalid");
 		
 		if ($("#unlock").val() === "Unlock") {
+			
+			//use placeholders if they haven't been replaced
+			if (!number1Replaced)
+			{
+				$("#number1").val("10");
+			}
+			if (!number2Replaced)
+			{
+				$("#number2").val("30");
+			}
+			if (!number3Replaced)
+			{
+				$("#number3").val("20");
+			}
 			
 			//make sure numbers are treated as numbers, not as strings			
 			number1 = Number($("#number1").val());
@@ -637,6 +666,7 @@ $(document).ready(function() {
 			
 			//if numbers are valid, open lock
 			if (numberInRange(number1) && numberInRange(number2) && numberInRange(number3)) {
+				
 				mode = "unlock";
 				openLock(number1, number2, number3, canvas, context);
 				
@@ -680,6 +710,20 @@ $(document).ready(function() {
 		$( "#number3" ).removeClass("invalid");
 		
 		if ($("#stepByStep").val() === "Step by Step") {
+			
+			//Use placeholders if they haven't been replaced
+			if (!number1Replaced)
+			{
+				$("#number1").val("10");
+			}
+			if (!number2Replaced)
+			{
+				$("#number2").val("30");
+			}
+			if (!number3Replaced)
+			{
+				$("#number3").val("20");
+			}
 			
 			//make sure numbers are treated as numbers, not as strings
 			number1 = Number($("#number1").val());
